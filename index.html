@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>InfiniteHorizons</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
 </head>
 <body>
     <header>
-        <h1>Welcome to My Simple Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Infinite Horizons</h1>
     </header>
-    
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section.</p>
-        </section>
-        
-        <section id="about">
-            <h2>About</h2>
-            <p>This is the about section.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>This is the contact section.</p>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Simple Website</p>
-    </footer>
 
-    <script src="script.js"></script>
+    <div id="background"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Tickets</a>
+        <a href="#">Technology</a>
+        <a href="#">Experiences and Journeys</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div id="container">
+        <div id="gradient1"> </div>
+        <div id="gradient2"> </div>
+    </div>    
+
+    <section>
+        <div>
+            <span class="welcomeText">Our mission is to bring the vast wonders of the cosmos directly to you, through the magic of virtual reality. With Galaxy Explorer VR, you're not just a spectator; you're the captain of your own interstellar journey. Picture yourself gliding through the Milky Way, past shimmering stars and mysterious planets, all from the comfort of your own home. Imagine the thrill of controlling your own spacecraft, navigating through asteroid fields and witnessing breathtaking cosmic phenomena up close. With our state-of-the-art VR technology, every adventure feels unbelievably real, as if you're truly soaring through the depths of space. Whether you're a seasoned space enthusiast or simply curious about the mysteries of the universe, Galaxy Explorer VR offers an experience like no other. So, why wait? Join us on this epic cosmic adventure and let your imagination take flight. The universe is waiting to be explored, and with Galaxy Explorer VR, the journey begins today.</span>
+        </div>
+    </section>
+
+    <div class="led-sign">
+        <span class="text">step into other dimension</span>
+    </div>
+
+    <footer>
+        &copy; 2024 Simple Website. All rights reserved.
+    </footer>
 </body>
 </html>

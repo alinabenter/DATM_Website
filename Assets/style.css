@@ -1,73 +1,137 @@
-/* Basic reset and styles for the website */
-body, h1, h2, p, ul, li, form, input, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: 'orbittronio';
+    src: url('../fonts/orbitronio.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'shuttlebmp';
+    src: url('../fonts/shuttlebmp.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'smalllcdsign';
+    src: url('../fonts/smalllcdsignregular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'starbats';
+    src: url('../fonts/starbats.woff') format('woff');
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(100%); /* Start offscreen */
+    }
+    to {
+        transform: translateX(-100vw); /* Move to the left */
+    }
+}
+
+@keyframes animateBackground {
+    0% { background-position: -100vw 0; } /* Start just outside the left edge */
+    100% { background-position: 100vw 0; } /* Move to the right edge */
+}
+
+@keyframes textPulse {
+    0% {
+        font-size: 18px;
+    }
+    50% {
+       font-size: 40px;
+    }
+    100% {
+        font-size: 18px;
+    }
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    /*cursor: url('/assets/images/ufo1.png'), auto;
+   /* background-image: url('/assets/images/bild1.png'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-attachment: fixed;
+   /* animation: animateBackground 100s linear infinite;*/
 }
 
 header {
-    background: #333;
-    color: #fff;
+    color: white;
+    font-family: "orbittronio", sans-serif;
     padding: 20px;
+    text-align: center;
+    animation: textPulse 5s infinite;
 }
 
-header h1 {
-    margin-bottom: 10px;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
+nav {
+    font-family: 'starbats';
+    font-size: 3vw;
+    color: blueviolet;
+    text-align: center;
+    padding: 10px;
 }
 
 nav a {
-    color: #fff;
     text-decoration: none;
+    padding: 0 10px;
 }
 
-main {
-    margin: 20px 0;
+nav a:hover {
+    background-color: #00bfff;
 }
 
 section {
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 20px;
+    max-width: 50vw;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background: #333;
-    color: #fff;
+}
+
+.led-sign {
+    font-family: 'smalllcdsign', sans-serif;
+    font-size: 10vw;
+    color: orange;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    white-space: nowrap;
+    animation: moveLeft 10s linear infinite;
+}
+
+.welcomeText {
+    font-family: Arial, Helvetica, sans-serif;  /* Custom font applied */
+    font-size: 18px;  /* Base font size */
+    color: white;
+    position: absolute;
+    top: 50%;
+    padding: 20vw;
+;
+}
+
+.welcomeText:hover {
+    transition: font-size 0.3s ease-in-out;
+    transform: rotate(30deg);
+    font-size: 140%;
 }
