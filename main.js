@@ -6,7 +6,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('background').appendChild(renderer.domElement);
-
+jndkd
 // Load the 360° texture
 const textureLoader = new THREE.TextureLoader();
 textureLoader.load('/assets/images/background5.png', function(texture) {
