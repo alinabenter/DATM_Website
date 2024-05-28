@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>InfiniteHorizons</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Experience Worlds</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Infinite Horizons</h1>
-    </header>
+    <audio id="background-audio" loop>
+        <source src="./assets/sounds/deepOceanRelexingSound.mp3" type="audio/mp3">
+        <source src="./assets/sounds/deepOceanRelexingSound.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 
-    <div id="background"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="main.js"></script>
-
-    <nav>
-        <a href="#">About</a>
-        <a href="#">Tickets</a>
-        <a href="#">Technology</a>
-        <a href="#">Experiences and Journeys</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <div id="container">
-        <div id="gradient1"> </div>
-        <div id="gradient2"> </div>
-    </div>    
-
-    <section>
-        <div>
-            <span class="welcomeText">Our mission is to bring the vast wonders of the cosmos directly to you, through the magic of virtual reality. With Galaxy Explorer VR, you're not just a spectator; you're the captain of your own interstellar journey. Picture yourself gliding through the Milky Way, past shimmering stars and mysterious planets, all from the comfort of your own home. Imagine the thrill of controlling your own spacecraft, navigating through asteroid fields and witnessing breathtaking cosmic phenomena up close. With our state-of-the-art VR technology, every adventure feels unbelievably real, as if you're truly soaring through the depths of space. Whether you're a seasoned space enthusiast or simply curious about the mysteries of the universe, Galaxy Explorer VR offers an experience like no other. So, why wait? Join us on this epic cosmic adventure and let your imagination take flight. The universe is waiting to be explored, and with Galaxy Explorer VR, the journey begins today.</span>
+    <div class="content-wrapper">
+        <div id="background"></div>
+        <div id="cloud"></div>
+        <div class="container">
+            <header class="main-header">
+                <h1>Your Meditation Begins Here</h1>
+            </header>
+            <section class="intro">
+                <button class="explore-btn" id="play-button">Start Experience</button>
+            </section>
+            <section class="experiences" id="experiences">
+                <!-- Experience cards will be injected here by JavaScript -->
+            </section>
         </div>
-    </section>
-
-    <div class="led-sign">
-        <span class="text">step into other dimension</span>
     </div>
-
-    <footer>
-        &copy; 2024 Simple Website. All rights reserved.
-    </footer>
+    <button class="audio-btn" id="audio-button">Are you ready to immerse yourself in a world of relaxation?</button>
+    <script src="scripts.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -1,15 +1,13 @@
-// Main.js
-
 // Create scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('background').appendChild(renderer.domElement);
-jndkd
+
 // Load the 360° texture
 const textureLoader = new THREE.TextureLoader();
-textureLoader.load('/assets/images/background5.png', function(texture) {
+textureLoader.load('/assets/images/background1.png', function(texture) {
     const geometry = new THREE.SphereGeometry(500, 60, 40);
     texture.wrapS = THREE.RepeatWrapping;
     texture.repeat.x = -1;
@@ -37,4 +35,23 @@ window.addEventListener('resize', function() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('background-audio');
+    const audioButton = document.getElementById('audio-button');
+
+    audioButton.addEventListener('click', function() {
+        audio.play().then(() => {
+            console.log('Audio is playing');
+        }).catch(error => {
+            console.error('Error playing audio:', error);
+        });
+
+        // Remove blur from the content-wrapper
+        document.body.classList.add('no-blur');
+
+        // Hide the button after interaction
+        audioButton.style.display = 'none';
+    });
 });
