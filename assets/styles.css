@@ -113,10 +113,10 @@ body.no-blur .content-wrapper {
     }
 }
 
-#cloud {
-    width: 150px; /* Adjust the width and height according to the size of your cloud image */
+#cloud1 {
+    width: 500px; /* Adjust the width and height according to the size of your cloud image */
     height: 100px;
-    background-image: url('./images/cloud4.png'); /* Replace 'path/to/cloud1.png' with the actual path to your image */
+    background-image: url('./images/cloud2.1.png'); /* Replace 'path/to/cloud1.png' with the actual path to your image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -129,21 +129,76 @@ body.no-blur .content-wrapper {
     filter: contrast(1) brightness(0.8); 
 }
 
-@keyframes fly {
-    0% {
-        right: -150px; /* Start just off the right side */
-        transform: translateY(-70%) translateY(0); /* Center vertically with no vertical movement */
-    }
-    25% {
-        transform: translateY(-70%) translateY(-50px); /* Move up slightly */
+#cloud2 {
+    width: 1000px; /* Adjust the width and height according to the size of your cloud image */
+    height: 210px;
+    background-image: url('./images/cloud2.1.png'); /* Replace 'path/to/cloud1.png' with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 70%; /* Initially position the cloud in the middle of the screen vertically */
+    right: -1000px; /* Initially position the cloud just off the right side of the screen */
+    transform: translateY(-30%); /* Center the cloud vertically */
+    animation: fly 20s linear infinite; /* Add animation */
+    opacity: 1; /* Set the opacity to 80% (you can adjust this value) */
+    filter: contrast(1) brightness(0.8); 
+}
+
+#cloud3 {
+    width: 500px; /* Adjust the width and height according to the size of your cloud image */
+    height: 100px;
+    background-image: url('./images/cloud2.1.png'); /* Replace 'path/to/cloud1.png' with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 90%; /* Initially position the cloud in the middle of the screen vertically */
+    right: 50%; /* Initially position the cloud just off the right side of the screen */
+    transform: translateY(-50%); /* Center the cloud vertically */
+    animation: fly 40s linear infinite; /* Add animation */
+    opacity: 0.8; /* Set the opacity to 80% (you can adjust this value) */
+    filter: contrast(1) brightness(0.8); 
+}
+
+#cloud6 {
+    width: 100%; /* Passt die Breite an die Größe deines Wolkenbildes an */
+    height: 400px; /* Passt die Höhe an die Größe deines Wolkenbildes an */
+    background-image: url('./images/wolkenGroß.png'); /* Ersetzt den Pfad durch den tatsächlichen Pfad zu deinem Bild */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0; /* Positioniert das Bild ganz unten auf dem Bildschirm */
+    left: 50%; /* Positioniert das Bild mittig horizontal */
+    transform: translateX(-50%); /* Korrigiert die horizontale Positionierung, um das Bild genau in der Mitte zu halten */
+    animation: pulseCloud 8s linear infinite;
+}
+
+@keyframes pulseCloud {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
     }
     50% {
-        transform: translateY(-70%) translateY(0); /* Move back to center vertically */
+        transform: translateX(-50%) scale(1.2);
+    }   
+}
+
+
+@keyframes fly {
+    0% {
+        right: -1000px; /* Start just off the right side */
+        transform: translateY(-50%) translateY(0); /* Center vertically with no vertical movement */
+    }
+    25% {
+        transform: translateY(-50%) translateY(-50px); /* Move up slightly */
+    }
+    50% {
+        transform: translateY(-50%) translateY(0); /* Move back to center vertically */
     }
     75% {
-        transform: translateY(-70%) translateY(50px); /* Move down slightly */
+        transform: translateY(-50%) translateY(50px); /* Move down slightly */
     }
-
     100% {
         right: calc(100% + 150px); /* Move to just off the left side */
         transform: translateY(-50%) translateY(0); /* Move back to center vertically */
